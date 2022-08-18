@@ -27,3 +27,38 @@ for (n in 3:20) {
 }
 # looks like all the tests passed!  great! 
 # At this point, you should commit your work. 
+
+# method 2 ----------------------------------------------------------------
+
+# Now, as every project tends to have happen, the scope has changed.  Maybe your
+# boss has had a change of heart, or perhaps the stakeholders have seen how
+# great your work is and want you to write them a new version that will work to
+# produce larger Fibonacci numbers.  No problem, maybe you've just learned about 
+# recursion, so that should be easy! 
+# https://www.freecodecamp.org/news/understanding-recursion-in-programming/
+
+# Recursively Calculate Fibonacci Numbers
+fibonacci_recursive <- function(n) {
+  if (n == 1) {
+    return(0)
+  } else if (n == 2) {
+    return(1)
+  } else if (n >= 3) {
+    return(fibonacci_recursive(n-1) + fibonacci_recursive(n-2))
+  }
+}
+
+# let's test our function similarly to as above 
+assert_that(fibonacci_recursive(1) == 0)
+assert_that(fibonacci_recursive(2) == 1)
+
+# this time we'll check that our function works to produce up to the first 
+# 30 Fibonacci numbers
+for (n in 3:30) {
+  assert_that(fibonacci_recursive(n) == fibonacci_recursive(n-1) + fibonacci_recursive(n-2))
+}
+# there seems to be an issue... 
+
+# You could commit your work so your colleagues can see it and maybe they can 
+# help you out! 
+
