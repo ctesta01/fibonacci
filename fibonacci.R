@@ -62,3 +62,31 @@ for (n in 3:30) {
 # You could commit your work so your colleagues can see it and maybe they can 
 # help you out! 
 
+
+
+# method 3 ----------------------------------------------------------------
+
+# Finally!  After extensive research, you discover that there's an exact 
+# formula for the Fibonacci sequence -- this might save the day! 
+# 
+# You might have even found a proof that the formula is exact: 
+# https://math.stackexchange.com/a/435205/206865 
+# 
+
+fibonacci_exact <- function(n) {
+  phi <- (1 + sqrt(5)) / 2 # this is the golden ratio
+  fib <- (phi^(n-1) - (-1/phi)^(n-1)) / sqrt(5)
+  return(fib)
+} 
+
+# let's try out our tests on this new method now! 
+assert_that(fibonacci_exact(1) == 0)
+assert_that(fibonacci_exact(2) == 1)
+
+for (n in 3:50) {
+  assert_that(abs(fibonacci_exact(n) - (
+    fibonacci_exact(n - 1) + fibonacci_exact(n - 2)
+  )) < .0001)
+}
+
+
