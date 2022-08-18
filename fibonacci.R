@@ -90,3 +90,29 @@ for (n in 3:50) {
 }
 
 
+# add visualization -------------------------------------------------------
+
+library(tidyverse)
+
+df <- tibble(x = 1:40, y = fibonacci_exact(x))
+
+plt1 <-
+  ggplot(df, aes(x = x, y = y)) + 
+  geom_line() + 
+  xlab("n") + 
+  ylab("Fibonacci(n)") + 
+  ggtitle("Fibonacci Numbers (linear scale)")
+
+plt2 <-
+  ggplot(df, aes(x = x, y = y)) + 
+  geom_line() + 
+  scale_y_log10() +  
+  xlab("n") + 
+  ylab("Fibonacci(n)") + 
+  ggtitle("Fibonacci Numbers (log scale)")
+
+library(patchwork)
+
+plt1 + plt2
+
+ggsave("fibonacci_numbers_figure.png", width=12, height = 5)
