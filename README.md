@@ -11,6 +11,10 @@ their own work. The choice of the Fibonacci numbers as an example to work with i
 arbitrary and just serves for an example of a concept that can be coded up and 
 iterated on, all the while using git and GitHub. 
 
+#### Data Visualization of the Fibonacci Numbers 
+
+![Figure showing the Fibonacci numbers, on linear and log scale](fibonacci_numbers_figure.png)
+
 ### Repository Setup
 
 You'll want to create a new project for your work in RStudio and a new repository 
