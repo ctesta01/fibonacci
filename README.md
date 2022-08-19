@@ -20,11 +20,11 @@ iterated on, all the while using git and GitHub.
 You'll want to create a new project for your work in RStudio and a new repository 
 on GitHub. Check the "Create a git repository" checkbox while making your new RStudio project.
 
-![Screenshot of the new RStudio project window with the "Create a git repository" checkbox checked](new_rstudio_project.png)
+![Screenshot of the new RStudio project window with the "Create a git repository" checkbox checked](screenshots/new_rstudio_project.png)
 
 Once you've created a new repository on GitHub, you'll see a screen like this: 
 
-![Screenshot of the new GitHub repository information](figures/new_github_repo.png)
+![Screenshot of the new GitHub repository information](screenshots/new_github_repo.png)
 
 You'll want to copy and paste those commands from the "push an existing repository from the command line"
 into the terminal.  If you use the terminal builtin to RStudio, you should already be in the 
@@ -99,14 +99,3 @@ Once you're happy with the changes that you've made, you can add them to the
 staging area or index with `git add fibonacci.R`.  After doing so, you can write a 
 commit message to go with your work.  E.g. `git commit -m "Adding a new recursive method"`.
 Now you can push you work with `git push`. 
-
-### Making A Branch and a Pull Request 
-
-To create a branch where you can test out some revisions, you will want to 
-run `git checkout -b branchName` or in our case `git checkout -b fix-DependenciesGoAtTheTop`.
-
-Once you've made your changes, committed them, and push them to GitHub using `git push origin fix-DependenciesGoAtTheTop`, you can go online to GitHub to create a Pull Request to the 
-`main` branch inviting the developer to accept your changes.  As long as your branch has 
-all of the recent commits from the `main` branch, GitHub will tell you that the changes can 
-be automatically merged.  In general, it's good courtesy to make sure your pull requests 
-can be automatically merged if at all possible when asking others to incorporate your code.
